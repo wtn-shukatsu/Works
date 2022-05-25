@@ -40,6 +40,7 @@ public class GensoukyouEngi : CardData
     }
 
     IEnumerator Activate() {
+        card.State.Remove(Card.CardState.Setting);
         yield return StartCoroutine(Effect());
         card.Controller.SendToGraveyardFromField(card);
     }

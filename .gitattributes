@@ -1,0 +1,5 @@
+DrAward/* filter=lfs diff=lfs merge=lfs -text
+DrAward/Saved/StagedBuilds/WindowsNoEditor/MyProject2/Content/Paks/MyProject2-WindowsNoEditor.pak filter=lfs diff=lfs merge=lfs -text
+Gensou_Orica/4_融合8_妖々夢_藍.psd filter=lfs diff=lfs merge=lfs -text
+Gensou_Orica/1-3_妖々夢_チューナー_メルラン.psd filter=lfs diff=lfs merge=lfs -text
+Gensou_Orica/2_スペル_永続_進撃の小人.psd filter=lfs diff=lfs merge=lfs -text
