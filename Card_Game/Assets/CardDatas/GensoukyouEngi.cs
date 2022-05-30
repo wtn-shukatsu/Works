@@ -20,7 +20,7 @@ public class GensoukyouEngi : CardData
     IEnumerator Effect() {
         List<Card> cardList = cardAction.SearchFromDeck(card.Controller, typeof(Monster), "幻想");
         if (cardList.Count > 0) {
-            card.Controller.Playable(false);
+            card.Controller.FieldMaster.Playable(false, card.Controller);
             card.Controller.selectDialog.gameObject.SetActive(true);
             var coroutine = card.Controller.selectDialog.SelectCard(cardList, 1);
 
@@ -30,7 +30,7 @@ public class GensoukyouEngi : CardData
             card.Controller.Search(cardList);
             card.Controller.Deck.Shuffle();
             card.Controller.selectDialog.gameObject.SetActive(false);
-            card.Controller.Playable(true);
+            card.Controller.FieldMaster.Playable(true, card.Controller);
         }
         else {
             Debug.Log("対象無し");
