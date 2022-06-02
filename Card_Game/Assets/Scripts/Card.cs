@@ -134,7 +134,11 @@ public class Card : MonoBehaviour
 
         // _arg に対応するメソッドを取得
         var act = cardData.GetType().GetMethod(
-                    _name, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance, null, new Type[] {}, null
+                    _name, 
+                    BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance, 
+                    null, 
+                    new Type[] {}, 
+                    null
                   );
 
         return act != null;
@@ -145,7 +149,11 @@ public class Card : MonoBehaviour
 
         // _arg に対応するメソッドを取得
         var act = cardData.GetType().GetMethod(
-                    _name, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance, null, new Type[] {}, null
+                    _name, 
+                    BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance, 
+                    null, 
+                    new Type[] {}, 
+                    null
                   );
 
         if (act != null) {

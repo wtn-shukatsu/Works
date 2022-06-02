@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
-    1. カードの操作を行う
-    2. FieldMasterへの窓口
-    3. EffectMasterへの窓口
+    カードの操作を行う
 */
 public class Player : MonoBehaviour
 {
@@ -232,6 +230,7 @@ public class Player : MonoBehaviour
         }
     }
 
+    // ドローフェイズのフラグ管理
     void DrawPhaseAction(bool _myTurn) {
         if (_myTurn) {
             fieldMaster.SetSummonCount(1);
@@ -241,10 +240,12 @@ public class Player : MonoBehaviour
         effectMaster.GetEffectList(phase);
     }
 
+    // スタンバイフェイズのフラグ管理
     void StandbyPhaseAction(bool _myTurn) {
         effectMaster.GetEffectList(phase);
     }
 
+    // メインフェイズ1のフラグ管理
     void MainPhase1Action(bool _myTurn) {
         if (_myTurn) {
             fieldMaster.Playable(true, this);
@@ -252,6 +253,7 @@ public class Player : MonoBehaviour
         effectMaster.GetEffectList(phase);
     }
 
+    // バトルフェイズのフラグ管理
     void BattlePhaseAction(bool _myTurn) {
         if (_myTurn) {
             fieldMaster.Playable(false, this);
