@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637698198400422283
-    m_Hash: 362936587
+      ticks: 637902932893422731
+    m_Hash: 2251644060
   m_LockFileStatus:
     m_FilePath: D:/Hiroki/Shukatsu/Works/Card_Game/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637698198407129003
-    m_Hash: 3066522303
+      ticks: 637902932893432703
+    m_Hash: 3272071519
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
