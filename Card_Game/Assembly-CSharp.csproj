@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scripts\DeckGenerater.cs" />
     <Compile Include="Assets\Scripts\FieldZone.cs" />
     <Compile Include="Assets\Scripts\Field.cs" />
+    <Compile Include="Assets\Scripts\AttackArrow.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

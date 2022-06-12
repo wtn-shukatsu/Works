@@ -6568,7 +6568,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1691414381
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6902,6 +6902,7 @@ GameObject:
   - component: {fileID: 1744809636}
   - component: {fileID: 1744809637}
   - component: {fileID: 1744809638}
+  - component: {fileID: 1744809639}
   m_Layer: 5
   m_Name: LlineRenderer
   m_TagString: Untagged
@@ -6973,7 +6974,7 @@ LineRenderer:
   - {x: 540, y: 810, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 540
+    widthMultiplier: 270
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -7034,6 +7035,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1744809635}
   m_CullTransparentMesh: 0
+--- !u!114 &1744809639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1744809635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6e661a095a310a4a908bfa9e23c75ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1748389657
 GameObject:
   m_ObjectHideFlags: 0
