@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackArrow : MonoBehaviour
-{
-    private LineRenderer lineRenderer;
-    private Vector3 defaultEndPosition;
+/*
+ * 攻撃対象選択時の矢印の表示
+ */
+public class AttackArrow : MonoBehaviour {
+    LineRenderer lineRenderer;      // LineRenderer
+    Vector3 defaultEndPosition;     // 矢印の先端のデフォルト座標
 
     void Start() {
         lineRenderer = GetComponent<LineRenderer>();

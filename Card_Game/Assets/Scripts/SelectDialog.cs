@@ -7,8 +7,7 @@ using UnityEngine.UI;
     1. カード選択ダイアログを表示
     2. 選択されたカードのリストを返す
 */
-public class SelectDialog : MonoBehaviour
-{
+public class SelectDialog : MonoBehaviour {
     int selectNum;                                          // 選択するカードの数
     bool selected;                                          // 選択終了フラグ
     List<Card> cardList;                                    // 選択されたカードのリスト

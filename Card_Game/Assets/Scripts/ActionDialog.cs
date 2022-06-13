@@ -56,6 +56,10 @@ public class ActionDialog : MonoBehaviour
         card.Controller.FieldMaster.Playable(true, card.Controller);
     }
 
+    public void SelectAttakTarget() {
+        ;
+    }
+
     public void Cancel() {
         gameObject.SetActive(false);
         card.Controller.FieldMaster.Playable(true, card.Controller);

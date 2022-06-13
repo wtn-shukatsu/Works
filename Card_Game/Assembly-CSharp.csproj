@@ -58,6 +58,7 @@
     <Compile Include="Assets\Scripts\EffectMaster.cs" />
     <Compile Include="Assets\Scripts\ActionDialog.cs" />
     <Compile Include="Assets\Scripts\FieldMaster.cs" />
+    <Compile Include="Assets\Scripts\AttackArrow.cs" />
     <Compile Include="Assets\Scripts\SelectDialog.cs" />
     <Compile Include="Assets\Scripts\CardPlace.cs" />
     <Compile Include="Assets\Scripts\CardData.cs" />
@@ -82,7 +83,7 @@
     <Compile Include="Assets\Scripts\DeckGenerater.cs" />
     <Compile Include="Assets\Scripts\FieldZone.cs" />
     <Compile Include="Assets\Scripts\Field.cs" />
-    <Compile Include="Assets\Scripts\AttackArrow.cs" />
+    <Compile Include="Assets\Scripts\SelectAttackTarget.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
