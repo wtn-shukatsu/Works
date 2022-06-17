@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
-public class Hand : CardPlace
-{
+public class Hand : CardPlace {
     List<Card> cardList = new List<Card>();
     float handWidth = 0;
     int handCount = 0;

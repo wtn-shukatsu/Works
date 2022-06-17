@@ -58,6 +58,10 @@ public class Field : CardPlace, IPointerEnterHandler, IPointerExitHandler
                !card.IState.Contains(Card.InstantCardState.CannotPlayMagicTrap);
     }
 
+    public bool CanAttack() {
+        return true;
+    }
+
     IEnumerator ShowPlayableZoneCoroutine() {
         playableEffectObj = Instantiate(playableEffectPrefab);
         playableEffectObj.transform.SetParent(transform);

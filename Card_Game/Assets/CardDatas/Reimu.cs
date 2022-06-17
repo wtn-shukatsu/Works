@@ -54,4 +54,8 @@ public class Reimu : CardData
     void ChangeBattlePosition() {
         cardAction.ChangeBattlePosition(card);
     }
+
+    public void Attack() {
+        cardAction.Attack(card);
+    }
 }

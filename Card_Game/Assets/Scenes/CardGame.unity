@@ -4795,7 +4795,9 @@ MonoBehaviour:
   cardImage: {fileID: 427614917}
   changeBattlePosition: {fileID: 661246778}
   playSetMagicTrap: {fileID: 604783273}
+  attack: {fileID: 1707469899}
   activateEffect: {fileID: 0}
+  selectAttackTarget: {fileID: 1691414382}
 --- !u!114 &1101710759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7081,9 +7083,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1691414382}
-        m_TargetAssemblyTypeName: SelectAttackTarget, Assembly-CSharp
-        m_MethodName: ShowAttackArrow
+      - m_Target: {fileID: 1101710758}
+        m_TargetAssemblyTypeName: ActionDialog, Assembly-CSharp
+        m_MethodName: SelectAttakTarget
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -8,7 +8,8 @@ using UnityEngine;
 public class SelectAttackTarget : MonoBehaviour {
     [SerializeField] AttackArrow attackArrow = null;
 
-    public void ShowAttackArrow() {
-        ;
+    public void ShowAttackArrow(Field _field) {
+        gameObject.SetActive(true);
+        attackArrow.ResetPositions(_field);
     }
 }

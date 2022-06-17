@@ -11,7 +11,9 @@ public class ActionDialog : MonoBehaviour
     [SerializeField] Image cardImage = null;
     [SerializeField] Button changeBattlePosition = null;
     [SerializeField] Button playSetMagicTrap = null;
+    [SerializeField] Button attack= null;
     [SerializeField] Button activateEffect = null;
+    [SerializeField] SelectAttackTarget selectAttackTarget = null;
 
     public void SetCard(Card _card, Field _field) {
         cardImage.sprite = _card.Face;
@@ -41,6 +43,18 @@ public class ActionDialog : MonoBehaviour
         else {
             playSetMagicTrap.gameObject.SetActive(false);
         }
+        if (card.ExistCardAction("Attack")) {
+            attack.gameObject.SetActive(true);
+            if (field.CanAttack()) {
+                attack.interactable = true;
+            }
+            else {
+                attack.interactable = false;
+            }
+        }
+        else {
+            attack.gameObject.SetActive(false);
+        }
         card.Controller.FieldMaster.Playable(false, card.Controller);
     }
 
@@ -57,7 +71,9 @@ public class ActionDialog : MonoBehaviour
     }
 
     public void SelectAttakTarget() {
-        ;
+        gameObject.SetActive(false);
+        selectAttackTarget.ShowAttackArrow(field);
+        card.Controller.FieldMaster.Playable(true, card.Controller);
     }
 
     public void Cancel() {

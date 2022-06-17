@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 
-public class Marisa : CardData
-{
+public class Marisa : CardData {
     string myName;
     Monster mns;
     List<CardAction> effectList;
@@ -46,5 +45,9 @@ public class Marisa : CardData
 
     public void ChangeBattlePosition() {
         cardAction.ChangeBattlePosition(card);
+    }
+
+    public void Attack() {
+        cardAction.Attack(card);
     }
 }

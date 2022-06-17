@@ -88,6 +88,9 @@ public class CardAction
         }
     }
 
+    public void Attack(Card _card) {
+    }
+
     public void SetMagicTrap(Card _card) {
         _card.ToggleFace(false);
         _card.State.Add(Card.CardState.Setting);
