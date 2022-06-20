@@ -6,4 +6,5 @@
 ※UnityのVersionについて、Card_Gameは2020.3.20f1、Space_Shooterは2020.3.28f1です。  
 ※Unreal EngineのVersionについて、DrAwardは4.27.1です。
 
-各作品についての詳細は、Portfolio/portfolio.pdfをご覧ください。
+各作品についての詳細は、Portfolio/portfolio.pdfをご覧ください。  
+操作方法は、各制作物のディレクトリ直下にある操作方法.txtをご覧ください。
