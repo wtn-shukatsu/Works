@@ -11,15 +11,12 @@ public class Done_WeaponController : MonoBehaviour
     private AudioSource audioSource;
     private Done_GameController gameController;
 
-	void Start ()
-	{
+	void Start () {
         GameObject gameControllerObject = GameObject.FindGameObjectWithTag("GameController");
-        if (gameControllerObject != null)
-        {
+        if (gameControllerObject != null) {
             gameController = gameControllerObject.GetComponent<Done_GameController>();
         }
-        if (gameController == null)
-        {
+        if (gameController == null) {
             Debug.Log("Cannot find 'GameController' script");
         }
         if (!gameController.gameOver) {
@@ -28,8 +25,7 @@ public class Done_WeaponController : MonoBehaviour
         }
 	}
 
-	void Fire ()
-	{
+	void Fire () {
 		Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
         audioSource.Play();
 	}

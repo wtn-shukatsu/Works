@@ -5,7 +5,8 @@ using UnityEngine;
 /*
  * UŒ‚‘ÎÛ‘I‘ğ‚Ì–îˆó‚Ì•\¦
  */
-public class AttackArrow : MonoBehaviour {
+public class AttackArrow : MonoBehaviour
+{
     LineRenderer lineRenderer;      // LineRenderer
     Vector3 defaultStartPosition;
     Vector3 defaultEndPosition;

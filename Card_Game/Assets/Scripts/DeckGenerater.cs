@@ -9,7 +9,8 @@ using UnityEngine.UI;
 /*
     デッキの生成を行う
 */
-public class DeckGenerater : MonoBehaviour {
+public class DeckGenerater : MonoBehaviour
+{
     Hashtable faceList;                                     // カード画像のキャッシュ
     Sprite back;                                            // カード裏面
 

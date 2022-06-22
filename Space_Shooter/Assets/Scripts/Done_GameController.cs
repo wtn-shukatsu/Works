@@ -27,8 +27,7 @@ public class Done_GameController : MonoBehaviour
     private bool e1, e2, e3;
     private int score;
 
-    void Start()
-    {
+    void Start() {
         gameOver = false;
         restart = false;
         restartText.text = "";
@@ -41,41 +40,33 @@ public class Done_GameController : MonoBehaviour
         StartCoroutine(SpawnWaves());
     }
 
-    void Update()
-    {
-        if (restart)
-        {
-            if (Input.GetButton("Submit"))
-            {
+    void Update() {
+        if (restart) {
+            if (Input.GetButton("Submit")) {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
     }
 
-    IEnumerator SpawnWaves()
-    {
+    IEnumerator SpawnWaves() {
         yield return new WaitForSeconds(startWait);
-        while (true)
-        {
+        while (true) {
             if (!e1 && Time.time > EnemySpawnWait1) {
                 e1 = true;
                 hazards.Add(Enemy1);
             }
 
-            if (!e2 && Time.time > EnemySpawnWait2)
-            {
+            if (!e2 && Time.time > EnemySpawnWait2) {
                 e2 = true;
                 hazards.Add(Enemy2);
             }
 
-            if (!e3 && Time.time > EnemySpawnWait3)
-            {
+            if (!e3 && Time.time > EnemySpawnWait3) {
                 e3 = true;
                 hazards.Add(Enemy3);
             }
 
-            for (int i = 0; i < hazardCount; i++)
-            {
+            for (int i = 0; i < hazardCount; i++) {
                 GameObject hazard = hazards[Random.Range(0, hazards.Count)];
                 Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
                 Quaternion spawnRotation = Quaternion.identity;
@@ -84,8 +75,7 @@ public class Done_GameController : MonoBehaviour
             }
             yield return new WaitForSeconds(waveWait);
 
-            if (gameOver)
-            {
+            if (gameOver) {
                 restartText.text = "Press Restart Button for Restart";
                 restart = true;
                 break;
@@ -93,19 +83,16 @@ public class Done_GameController : MonoBehaviour
         }
     }
 
-    public void AddScore(int newScoreValue)
-    {
+    public void AddScore(int newScoreValue) {
         score += newScoreValue;
         UpdateScore();
     }
 
-    void UpdateScore()
-    {
+    void UpdateScore() {
         scoreText.text = "Score: " + score;
     }
 
-    public void GameOver()
-    {
+    public void GameOver() {
         gameOverText.text = "Game Over!";
         gameOver = true;
     }

@@ -5,7 +5,8 @@ using UnityEngine;
 /*
  * UŒ‚‘ÎÛ‚Ì‘I‘ğ
  */
-public class SelectAttackTarget : MonoBehaviour {
+public class SelectAttackTarget : MonoBehaviour
+{
     [SerializeField] AttackArrow attackArrow = null;
 
     public void ShowAttackArrow(Field _field) {
