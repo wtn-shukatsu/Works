@@ -66,12 +66,13 @@
     <Compile Include="Assets\Scripts\Done_Mover.cs" />
     <Compile Include="Assets\Scripts\Done_EvasiveManeuver_Hard.cs" />
     <Compile Include="Assets\Scripts\Done_GameController.cs" />
+    <Compile Include="Assets\Scripts\Title.cs" />
     <Compile Include="Assets\Scripts\Done_EvasiveManeuver_VeryHard.cs" />
     <Compile Include="Assets\Scripts\Done_RandomRotator.cs" />
     <Compile Include="Assets\Scripts\Done_DestroyByContact.cs" />
     <Compile Include="Assets\Scripts\Done_EvasiveManeuver_Normal.cs" />
     <Compile Include="Assets\Scripts\Done_DestroyByTime.cs" />
-    <Compile Include="Assets\Scripts\PressAnyButton.cs" />
+    <Compile Include="Assets\Scripts\ShotToStart.cs" />
     <None Include="Assets\Fonts\OpenSans\License!.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.28f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

@@ -24,7 +24,7 @@ public class Done_Asteroid : MonoBehaviour
             }
             gravity = EnemyBolt.GetComponent<Done_Special_Bolt>().gravity;
             angle = EnemyBolt.transform.position - transform.position;
-            GetComponent<Rigidbody>().AddForce(angle.normalized * (gravity / Mathf.Pow(distance, 2)));
+            GetComponent<Rigidbody>().AddForce(angle.normalized * (gravity / Mathf.Pow(distance, 3)));
         }
     }
 }
