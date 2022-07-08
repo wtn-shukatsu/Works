@@ -17,19 +17,14 @@ public class Title : MonoBehaviour
     void OnTriggerEnter(Collider other) {
         if ( other.CompareTag("Shot") ) {
             Instantiate(explosion, transform.position, transform.rotation);
-            //Destroy(gameObject);
-            gameObject.SetActive(false);
             Destroy(other.gameObject);
-            Destroy(shotToStart);
-            Debug.Log("before invoke");
+            gameObject.SetActive(false);
+            shotToStart.SetActive(false);
             Invoke("ChangeScene", 1.5f);
-            Debug.Log("after invoke");
         }
     }
 
     void ChangeScene() {
-        Debug.Log("before load scene");
         SceneManager.LoadScene("Main");
-        Debug.Log("after load scene");
     }
 }

@@ -56,23 +56,24 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Done_PlayerController.cs" />
-    <Compile Include="Assets\Scripts\Done_Special_Bolt.cs" />
+    <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\EnemyShotGravity.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
-    <Compile Include="Assets\Scripts\Done_BGScroller.cs" />
-    <Compile Include="Assets\Scripts\Done_WeaponController.cs" />
-    <Compile Include="Assets\Scripts\Done_Asteroid.cs" />
-    <Compile Include="Assets\Scripts\Done_DestroyByBoundary.cs" />
-    <Compile Include="Assets\Scripts\Done_Mover.cs" />
-    <Compile Include="Assets\Scripts\Done_EvasiveManeuver_Hard.cs" />
-    <Compile Include="Assets\Scripts\Done_GameController.cs" />
+    <Compile Include="Assets\Scripts\BGScroller.cs" />
+    <Compile Include="Assets\Scripts\WeaponController.cs" />
+    <Compile Include="Assets\Scripts\Asteroid.cs" />
+    <Compile Include="Assets\Scripts\DestroyByBoundary.cs" />
+    <Compile Include="Assets\Scripts\Mover.cs" />
+    <Compile Include="Assets\Scripts\EvasiveManeuver_Hard.cs" />
+    <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\Title.cs" />
-    <Compile Include="Assets\Scripts\Done_EvasiveManeuver_VeryHard.cs" />
-    <Compile Include="Assets\Scripts\Done_RandomRotator.cs" />
-    <Compile Include="Assets\Scripts\Done_DestroyByContact.cs" />
-    <Compile Include="Assets\Scripts\Done_EvasiveManeuver_Normal.cs" />
-    <Compile Include="Assets\Scripts\Done_DestroyByTime.cs" />
+    <Compile Include="Assets\Scripts\EnemyShip2.cs" />
+    <Compile Include="Assets\Scripts\RandomRotator.cs" />
+    <Compile Include="Assets\Scripts\DestroyByContact.cs" />
+    <Compile Include="Assets\Scripts\EnemyShip1.cs" />
+    <Compile Include="Assets\Scripts\DestroyByTime.cs" />
     <Compile Include="Assets\Scripts\ShotToStart.cs" />
+    <Compile Include="Assets\Scripts\TitleMenu.cs" />
     <None Include="Assets\Fonts\OpenSans\License!.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.28f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
