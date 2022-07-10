@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Title : MonoBehaviour
 {
     public GameObject explosion;
     public GameObject shotToStart;
+    public FadePanel fadePanel;
+    public Text titleText;
+    public BoxCollider titleCollider;
 
     void Start() {
         if (explosion == null) {
@@ -18,13 +22,21 @@ public class Title : MonoBehaviour
         if ( other.CompareTag("Shot") ) {
             Instantiate(explosion, transform.position, transform.rotation);
             Destroy(other.gameObject);
-            gameObject.SetActive(false);
+            titleText.enabled = false;
+            titleCollider.enabled = false;
             shotToStart.SetActive(false);
-            Invoke("ChangeScene", 1.5f);
+
+            StartCoroutine(ChangeSceneToMain());
         }
     }
 
-    void ChangeScene() {
+    IEnumerator ChangeSceneToMain() {
+        yield return new WaitForSeconds(1.5f);
+
+        fadePanel.FadeOut();
+
+        yield return new WaitForSeconds(1.5f);
+
         SceneManager.LoadScene("Main");
     }
 }

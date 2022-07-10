@@ -8,49 +8,60 @@ public class EnemyShip1 : MonoBehaviour
 	public Vector2 startWait;
 	public Vector2 maneuverTime;
 	public Vector2 maneuverWait;
+    public Boundary maxSpeed;
     public Boundary boundary;
 
-    private float currentSpeed;
-	private float targetManeuver;
+    private float currentSpeedX;
+    private float currentSpeedZ;
     private Rigidbody rb;
+    private GameObject player;
     private Transform target;
-    private bool evade = false;
+    private bool aiming;
 
     void Start () {
         rb = GetComponent<Rigidbody>();
-        target = GameObject.FindGameObjectWithTag("Player").transform;
-        currentSpeed = rb.velocity.z;
-		StartCoroutine(Evade());
-	}
+        currentSpeedZ = rb.velocity.z;
+        currentSpeedX = rb.velocity.x;
+        aiming = false;
+        player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null) {
+            target = player.transform;
+            StartCoroutine(Evade());
+        }
+    }
 	
 	IEnumerator Evade () {
 		yield return new WaitForSeconds (Random.Range (startWait.x, startWait.y));
-		while (true) {
-			targetManeuver = target.position.x;
-            if (rb.position.z > target.position.z) {
-                currentSpeed = -currentSpeed / 4;
-                evade = true;
+
+        float aimingTime = Random.Range(maneuverTime.x, maneuverTime.y);
+        while (true) {
+            if (target != null && rb.position.z > target.position.z) {
+                currentSpeedX = (target.position.x - transform.position.x) / aimingTime;
+                currentSpeedX = Mathf.Clamp(currentSpeedX, maxSpeed.xMin, maxSpeed.xMax);
+                currentSpeedZ = -currentSpeedZ / 4;
+                aiming = true;
             }
-            yield return new WaitForSeconds (Random.Range (maneuverTime.x, maneuverTime.y));
-			targetManeuver = 0;
-            if (evade) {
-                currentSpeed = -currentSpeed * 4;
-                evade = false;
+
+            yield return new WaitForSeconds(aimingTime);
+
+            if (aiming) {
+                currentSpeedX = 0;
+                currentSpeedZ = -currentSpeedZ * 4;
+                aiming = false;
             }
-            yield return new WaitForSeconds (Random.Range (maneuverWait.x, maneuverWait.y));
-		}
-	}
+
+            yield return new WaitForSeconds(Random.Range(maneuverWait.x, maneuverWait.y));
+        }
+    }
 	
 	void FixedUpdate () {
-		float newManeuver = Mathf.MoveTowards (targetManeuver, rb.position.x, smoothing * Time.deltaTime);
-		rb.velocity = new Vector3 (newManeuver, 0.0f, currentSpeed);
-		rb.position = new Vector3
-					 (
-						Mathf.Clamp(rb.position.x, boundary.xMin, boundary.xMax), 
-				 		0.0f, 
-					 	Mathf.Clamp(rb.position.z, boundary.zMin, boundary.zMax)
-					 );
-		
-		rb.rotation = Quaternion.Euler (0, 0, rb.velocity.x * -tilt);
-	}
+        rb.velocity = new Vector3(currentSpeedX, 0, currentSpeedZ);
+        rb.position = new Vector3
+                         (
+                            Mathf.Clamp(rb.position.x, boundary.xMin, boundary.xMax),
+                            0.0f,
+                            Mathf.Clamp(rb.position.z, boundary.zMin, boundary.zMax)
+                         );
+        rb.rotation = Quaternion.Euler(0, 0, rb.velocity.x * (-tilt));
+    }
 }

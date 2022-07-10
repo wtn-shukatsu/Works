@@ -56,6 +56,7 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\FadePanel.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\EnemyShotGravity.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
@@ -64,8 +65,9 @@
     <Compile Include="Assets\Scripts\Asteroid.cs" />
     <Compile Include="Assets\Scripts\DestroyByBoundary.cs" />
     <Compile Include="Assets\Scripts\Mover.cs" />
-    <Compile Include="Assets\Scripts\EvasiveManeuver_Hard.cs" />
+    <Compile Include="Assets\Scripts\EnemyShip3.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\TitleMenu.cs" />
     <Compile Include="Assets\Scripts\Title.cs" />
     <Compile Include="Assets\Scripts\EnemyShip2.cs" />
     <Compile Include="Assets\Scripts\RandomRotator.cs" />
@@ -73,7 +75,6 @@
     <Compile Include="Assets\Scripts\EnemyShip1.cs" />
     <Compile Include="Assets\Scripts\DestroyByTime.cs" />
     <Compile Include="Assets\Scripts\ShotToStart.cs" />
-    <Compile Include="Assets\Scripts\TitleMenu.cs" />
     <None Include="Assets\Fonts\OpenSans\License!.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.28f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

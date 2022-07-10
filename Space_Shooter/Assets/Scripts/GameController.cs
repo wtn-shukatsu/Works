@@ -21,6 +21,7 @@ public class GameController : MonoBehaviour
     public Text restartText;
     public Text gameOverText;
     public bool gameOver;
+    public FadePanel fadePanel;
 
     private bool restart;
     private bool e1, e2;
@@ -38,6 +39,7 @@ public class GameController : MonoBehaviour
         highScoreText.text = "High Score: " + highScore;
         score = 0;
         UpdateScore();
+        fadePanel.FadeIn();
         StartCoroutine(SpawnWaves());
     }
 
