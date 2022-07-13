@@ -3,14 +3,17 @@ using System.Collections;
 
 public class EnemyShip1 : MonoBehaviour
 {
-	public float tilt;
+    public float tilt;
 	public float smoothing;
 	public Vector2 startWait;
 	public Vector2 maneuverTime;
 	public Vector2 maneuverWait;
     public Boundary maxSpeed;
     public Boundary boundary;
+    public EnemyWeapon1 enemyWeapon1;
 
+    private float positionDeltaX;
+    private float positionDeltaZ;
     private float currentSpeedX;
     private float currentSpeedZ;
     private Rigidbody rb;
@@ -20,24 +23,23 @@ public class EnemyShip1 : MonoBehaviour
 
     void Start () {
         rb = GetComponent<Rigidbody>();
-        currentSpeedZ = rb.velocity.z;
         currentSpeedX = rb.velocity.x;
+        currentSpeedZ = rb.velocity.z;
         aiming = false;
         player = GameObject.FindGameObjectWithTag("Player");
         if (player != null) {
             target = player.transform;
-            StartCoroutine(Evade());
+            StartCoroutine(Aim());
         }
     }
 	
-	IEnumerator Evade () {
-		yield return new WaitForSeconds (Random.Range (startWait.x, startWait.y));
+	IEnumerator Aim() {
+		yield return new WaitForSeconds (Random.Range(startWait.x, startWait.y));
 
         float aimingTime = Random.Range(maneuverTime.x, maneuverTime.y);
-        while (true) {
-            if (target != null && rb.position.z > target.position.z) {
-                currentSpeedX = (target.position.x - transform.position.x) / aimingTime;
-                currentSpeedX = Mathf.Clamp(currentSpeedX, maxSpeed.xMin, maxSpeed.xMax);
+        while (target != null) {
+            if (positionDeltaZ > 0) {
+                currentSpeedX = Mathf.Clamp(positionDeltaX / aimingTime, maxSpeed.xMin, maxSpeed.xMax);
                 currentSpeedZ = -currentSpeedZ / 4;
                 aiming = true;
             }
@@ -53,15 +55,24 @@ public class EnemyShip1 : MonoBehaviour
             yield return new WaitForSeconds(Random.Range(maneuverWait.x, maneuverWait.y));
         }
     }
-	
-	void FixedUpdate () {
+
+    void Update() {
+        if (target != null) {
+            positionDeltaX = target.position.x - rb.position.x;
+            positionDeltaZ = rb.position.z - target.position.z;
+            if (positionDeltaZ > 0 && Mathf.Abs(positionDeltaX) <= 0.4f) {
+                enemyWeapon1.Fire();
+            }
+        }
+    }
+
+    void FixedUpdate () {
         rb.velocity = new Vector3(currentSpeedX, 0, currentSpeedZ);
-        rb.position = new Vector3
-                         (
+        rb.position = new Vector3 (
                             Mathf.Clamp(rb.position.x, boundary.xMin, boundary.xMax),
                             0.0f,
                             Mathf.Clamp(rb.position.z, boundary.zMin, boundary.zMax)
-                         );
+                          );
         rb.rotation = Quaternion.Euler(0, 0, rb.velocity.x * (-tilt));
     }
 }

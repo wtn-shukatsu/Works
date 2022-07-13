@@ -3,6 +3,7 @@
   - [DestroyとInvoke＆Coroutine](#destroyとinvokecoroutine)
   - [Width&HeightとScale](#widthheightとscale)
   - [ColliderとTrigger](#colliderとtrigger)
+  - [Rigidbodyとposition](#rigidbodyとposition)
 
 # Unity備忘録
 
@@ -26,3 +27,9 @@
 - Is Triggerにチェック → Trigger化
 - Colliderはぶつかる、Triggerはすり抜ける
 - Rigidbodyは片方でOK
+
+## Rigidbodyとposition
+
+- Rigidbodyの衝突判定はUpdate前
+  - transform.positionで移動すると衝突計算を全て再計算
+  - rigidbody.positionで移動させるべし

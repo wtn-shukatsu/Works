@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\TitleMenu.cs" />
     <Compile Include="Assets\Scripts\Title.cs" />
+    <Compile Include="Assets\Scripts\EnemyWeapon1.cs" />
     <Compile Include="Assets\Scripts\EnemyShip2.cs" />
     <Compile Include="Assets\Scripts\RandomRotator.cs" />
     <Compile Include="Assets\Scripts\DestroyByContact.cs" />
