@@ -3,23 +3,23 @@ using System.Collections;
 
 public class EnemyShip1 : MonoBehaviour
 {
-    public float tilt;
-	public float smoothing;
-	public Vector2 startWait;
-	public Vector2 maneuverTime;
-	public Vector2 maneuverWait;
-    public Boundary maxSpeed;
-    public Boundary boundary;
-    public EnemyWeapon1 enemyWeapon1;
+    [SerializeField] float tilt;
+    [SerializeField] float smoothing;
+    [SerializeField] Vector2 startWait;
+    [SerializeField] Vector2 maneuverTime;
+    [SerializeField] Vector2 maneuverWait;
+    [SerializeField] Boundary maxSpeed;
+    [SerializeField] Boundary boundary;
+    [SerializeField] EnemyWeapon enemyWeapon;
 
-    private float positionDeltaX;
-    private float positionDeltaZ;
-    private float currentSpeedX;
-    private float currentSpeedZ;
-    private Rigidbody rb;
-    private GameObject player;
-    private Transform target;
-    private bool aiming;
+    float positionDeltaX;
+    float positionDeltaZ;
+    float currentSpeedX;
+    float currentSpeedZ;
+    Rigidbody rb;
+    GameObject player;
+    Transform target;
+    bool aiming;
 
     void Start () {
         rb = GetComponent<Rigidbody>();
@@ -61,7 +61,7 @@ public class EnemyShip1 : MonoBehaviour
             positionDeltaX = target.position.x - rb.position.x;
             positionDeltaZ = rb.position.z - target.position.z;
             if (positionDeltaZ > 0 && Mathf.Abs(positionDeltaX) <= 0.4f) {
-                enemyWeapon1.Fire();
+                enemyWeapon.Fire();
             }
         }
     }

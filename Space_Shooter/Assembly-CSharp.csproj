@@ -69,13 +69,16 @@
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\TitleMenu.cs" />
     <Compile Include="Assets\Scripts\Title.cs" />
-    <Compile Include="Assets\Scripts\EnemyWeapon1.cs" />
+    <Compile Include="Assets\Scripts\EnemyWeapon.cs" />
     <Compile Include="Assets\Scripts\EnemyShip2.cs" />
     <Compile Include="Assets\Scripts\RandomRotator.cs" />
     <Compile Include="Assets\Scripts\DestroyByContact.cs" />
     <Compile Include="Assets\Scripts\EnemyShip1.cs" />
     <Compile Include="Assets\Scripts\DestroyByTime.cs" />
     <Compile Include="Assets\Scripts\ShotToStart.cs" />
+    <None Include="Assets\Modular Space Raider\Shader\how_to_use.txt" />
+    <None Include="Assets\Modular Space Raider\readme.txt" />
+    <None Include="Assets\Modular Space Raider\Shader\Dynamic_Illum_Spec.shader" />
     <None Include="Assets\Fonts\OpenSans\License!.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.28f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

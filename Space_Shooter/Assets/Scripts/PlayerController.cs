@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
 	public GameObject shot;
 	public Transform[] shotSpawns;
 	public float fireRate;
-	 
+	
 	private float nextFire;
     private Rigidbody rb;
     private AudioSource audioSource;
@@ -42,14 +42,11 @@ public class PlayerController : MonoBehaviour
 
 		Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 		rb.velocity = movement * speed;
-
-		rb.position = new Vector3
-						(
+		rb.position = new Vector3 (
 							Mathf.Clamp(rb.position.x, boundary.xMin, boundary.xMax),
 							0.0f,
 							Mathf.Clamp(rb.position.z, boundary.zMin, boundary.zMax)
-						);
-
+						  );
 		rb.rotation = Quaternion.Euler(0.0f, 0.0f, rb.velocity.x * -tilt);
 	}
 }

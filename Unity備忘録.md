@@ -4,6 +4,7 @@
   - [Width&HeightとScale](#widthheightとscale)
   - [ColliderとTrigger](#colliderとtrigger)
   - [Rigidbodyとposition](#rigidbodyとposition)
+  - [Unity Editorとstatic変数](#unity-editorとstatic変数)
 
 # Unity備忘録
 
@@ -33,3 +34,9 @@
 - Rigidbodyの衝突判定はUpdate前
   - transform.positionで移動すると衝突計算を全て再計算
   - rigidbody.positionで移動させるべし
+
+## Unity Editorとstatic変数
+
+- static変数が解放されるタイミングは次回の再生開始時(再生終了時には解放されずそのまま残る)
+  - 次の再生開始時にメンバ変数を初期化
+  - 新しいインスタンス生成＆古いインスタンスのデストラクタ実行
