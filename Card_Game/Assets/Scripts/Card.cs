@@ -132,7 +132,7 @@ public class Card : MonoBehaviour
     // カードデータの指定メソッドの存在確認
     public bool ExistCardAction(string _name) {
 
-        // _arg に対応するメソッドを取得
+        // _name に対応するメソッドを取得
         var act = cardData.GetType().GetMethod(
                     _name, 
                     BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance, 
@@ -147,7 +147,7 @@ public class Card : MonoBehaviour
     // カードデータの指定メソッドの実行
     public void InvokeCardAction(string _name) {
 
-        // _arg に対応するメソッドを取得
+        // _name に対応するメソッドを取得
         var act = cardData.GetType().GetMethod(
                     _name, 
                     BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance, 

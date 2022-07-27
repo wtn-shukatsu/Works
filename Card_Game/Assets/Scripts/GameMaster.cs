@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+ * 1. ゲーム開始時の処理を扱う
+ * 2. フェイズの進行管理役
+ */
 public class GameMaster : MonoBehaviour
 {
     public enum Phase {
