@@ -23,3 +23,6 @@ Unreal EngineのVersionについては以下の通りです。
 ・Card_Game：Card_Game/Assets/Scripts/, Card_Game/Assets/CardDatas/  
 ・Space_Shooter：Space_Shooter/Assets/Scripts/  
 ・DrAward：DrAward/Content/BluePrint/  
+
+ゲームのデモは以下をご覧ください。  
+・Video/
